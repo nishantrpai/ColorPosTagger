@@ -1,6 +1,6 @@
 //default color
 chrome.storage.sync.set({
-	'noun': '<font color="#009250">',
+	'noun': '<font color="#009250" style="background-color: rgba(0,146,80,0.5);border-radius: 5px;">',
 	'adjective': '<font color="#1F91BE">',
 	'verb': '<font color="#DE9610">',
 	'adverb': '<font color="#5D639E">',
@@ -41,11 +41,13 @@ var toggle = true;
 chrome.action.onClicked.addListener(function (tab) {
 	toggle = !toggle;
 	if (toggle) {
-		chrome.action.setIcon({ path: "icons/icon_before.png", tabId: tab.id });
-		chrome.tabs.executeScript(tab.id, { file: "SCRIPT.user.js" });
-	}
+		chrome.action.setBadgeText({ text: 'OFF' });
+  //   chrome.scripting.executeScript({
+  //     target: { tabId: tab.id },
+  //     files: ['SCRIPT.user.js']
+  // });
+}
 	else {
-		chrome.action.setIcon({ path: "icons/icon_after.png", tabId: tab.id });
-		chrome.tabs.executeScript(tab.id, { code: "alert()" });
-	}
+		chrome.action.setBadgeText({ text: 'ON' });
+}
 });

@@ -298241,6 +298241,7 @@ function changeHTML(fontColors) {
             }
             prevWord = word;
         }
+        // TODO: MAKE IT SO HTML STAYS AS PARENT AND CAN ADD CLASSES
         $(this).replaceWith("<p>" + replacedSentence + "</p>");
     });
 }

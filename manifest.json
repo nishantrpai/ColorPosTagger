@@ -22,14 +22,19 @@
               "https://*/*"
           ],
           "js": [
-              "src/jquery-3.0.0.min.js",
+              "src/jquery-3.6.0.min.js",
               "src/pos-bundle.js",
               "src/change-color.js"
           ]
       }
   ],
+  "web_accessible_resources": [{
+    "resources":["https://code.jquery.com/jquery-3.6.0.min.js"],
+    "matches":["https://*/*","http://*/*"]
+  }],
   "permissions": [
-      "storage"
+      "storage",
+      "scripting"
       // Removed "tabs" as it's often not needed in Manifest V3
   ],
   "options_ui": {

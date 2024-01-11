@@ -94,5 +94,3 @@ function changeHTML(fontColors, focusTag) {
         $(this).replaceWith('<' + focusTag + '>' + replacedSentence + '</' + focusTag + '>');
     });
 }
-
-
